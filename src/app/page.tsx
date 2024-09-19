@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex min-h-screen bg-neutral-100 items-center justify-center">
-      <Card className="w-[440px] h-[600px] grid grid-rows-[min-content_1fr_min-content]">
+      <Card className="w-[440px] h-[600px] grid grid-rows-[min-content_1fr_min-content] shadow-2xl">
         <CardHeader>
           <CardTitle>Chat IA</CardTitle>
           <CardDescription>Criação de chatbot com IA</CardDescription>
