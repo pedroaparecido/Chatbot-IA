@@ -9,19 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.61",
     "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "ai": "^3.3.43",
+    "axios": "^1.7.7",
     "chatbot-ai": "file:",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.441.0",
-    "next": "14.2.4",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "^15.0.0-canary.159",
+    "openai": "^4.62.1",
+    "openai-edge": "^1.2.2",
+    "react": "19.0.0-rc-e740d4b1-20240919",
+    "react-dom": "19.0.0-rc-e740d4b1-20240919",
+    "react-hook-form": "^7.53.0",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
