@@ -1,8 +1,7 @@
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import userSchema from './modules/user/user.model'
-import { redis } from '@/lib/redis'
-import { redirect } from 'next/navigation'
+import { ConnectToDatabase } from '@/lib/middlewares/mongodb'
 
 export const {
     handlers: { GET, POST },
@@ -10,9 +9,6 @@ export const {
     signIn,
     signOut
 } = NextAuth({
-    session: {
-        strategy: 'jwt'
-    },
     providers: [
         Credentials({
             credentials: {
@@ -24,16 +20,20 @@ export const {
                 }
             },
             async authorize(credentials) {
+                ConnectToDatabase()
+                const email = credentials.email
                 if (!credentials) return null
 
-                const user = await userSchema.find({ email: credentials.email })
+                const user = await userSchema.findOne({ email: email })
 
                 if (!user) return null
+                
+                if (user)
+                    return { email: user.email, id: user._id }
 
-                await redis.get(`${credentials.email}`)
-
-                redirect('/')
+                return null
             }
         })
-    ]
+    ],
+    secret: 'abacadabra'
 })
