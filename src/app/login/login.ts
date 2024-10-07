@@ -2,13 +2,14 @@
 
 import { FieldValues } from "react-hook-form"
 import { signIn } from "../../../auth"
+import { redis } from "@/lib/redis"
 
 export async function HandleLoginApi(data: FieldValues) {
     try {
         const  email = data.email
         const  password = data.password
-        const con = await signIn('credentials', { email, password })
-        console.log(con)
+        await signIn('credentials', { email, password })
+        
     } catch (err) {
         throw err
     }

@@ -12,7 +12,7 @@ export async function HandleApi(data: FieldValues) {
         const res = await create(data)
         console.log(res)
         if (res._id) {
-            await redis.set(`${res._id}`, `${data}`)
+            await redis.set(`${data.email}`, `${data}`)
         }
         //redirect('/login')
     } catch (err) {

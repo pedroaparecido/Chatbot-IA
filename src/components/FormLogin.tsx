@@ -23,10 +23,10 @@ export default function FormLogin() {
                     <Input className="mb-[10px] shadow-xl" {...register('email')} />
                     <label className="text-lg">Password:</label>
                     <Input className="mb-[20px] shadow-xl" {...register('password')} />
-                    <Button className="w-[100%]">Enviar</Button>
+                    <Button className="w-[100%] bg-neutral-700 text-white">Enviar</Button>
                 </form>
-                    <Button className="w-[223px]">Google</Button>
-                    <Button className="w-[223px]">Github</Button>
+                    <Button className="w-[223px] bg-neutral-700 text-white">Google</Button>
+                    <Button className="w-[223px] bg-neutral-700 text-white">Github</Button>
             </Card>
         </div>
     )
